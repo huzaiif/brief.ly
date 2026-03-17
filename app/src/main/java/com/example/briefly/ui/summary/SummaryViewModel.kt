@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.briefly.BuildConfig
 import com.example.briefly.data.api.Content
 import com.example.briefly.data.api.GeminiApiService
 import com.example.briefly.data.api.GeminiRequest
@@ -29,8 +30,7 @@ class SummaryViewModel : ViewModel() {
     private val _saveSuccess = MutableLiveData<Boolean>()
     val saveSuccess: LiveData<Boolean> = _saveSuccess
 
-    // Replace with your actual Gemini API key
-    private val API_KEY = "AIzaSyC5bR2Bum80havjh3Imvcbnnhos0RETgAQ"
+    private val API_KEY = BuildConfig.GEMINI_API_KEY
 
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://generativelanguage.googleapis.com/")
@@ -46,11 +46,18 @@ class SummaryViewModel : ViewModel() {
 
         viewModelScope.launch {
             try {
+                if (API_KEY.isEmpty()) {
+                    _error.value = "Error: API Key is missing. Please add GEMINI_API_KEY to local.properties"
+                    _isLoading.value = false
+                    return@launch
+                }
+
                 val response = apiService.generateContent(API_KEY, request)
                 if (response.isSuccessful) {
                     _summary.value = response.body()?.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text
                 } else {
-                    _error.value = "API Error: ${response.message()}"
+                    val errorBody = response.errorBody()?.string()
+                    _error.value = "API Error: ${response.code()} ${response.message()} - $errorBody"
                 }
             } catch (e: Exception) {
                 _error.value = "Error: ${e.message}"
