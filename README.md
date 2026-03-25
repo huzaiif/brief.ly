@@ -95,4 +95,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests to i
 This project is licensed under the MIT License.
 
 ---
-*Created with ❤️ by [Huzaiif](https://github.com/huzaiif)*
+*Created with ❤️ by [Huzaiif] and Munaf(https://github.com/huzaiif)*
