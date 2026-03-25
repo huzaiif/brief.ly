@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.briefly.R
 import com.example.briefly.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.tom_roush.pdfbox.android.PDFBoxResourceLoader
 import com.tom_roush.pdfbox.pdmodel.PDDocument
 import com.tom_roush.pdfbox.text.PDFTextStripper
@@ -63,6 +64,11 @@ class HomeFragment : Fragment() {
         binding.cardResearch.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_webViewFragment)
         }
+
+        binding.btnLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
     }
 
     private fun openFilePicker() {
@@ -86,12 +92,6 @@ class HomeFragment : Fragment() {
             }
 
             if (!text.isNullOrBlank()) {
-                val action = HomeFragmentDirections.actionHomeFragmentToPasteTextFragment().apply {
-                    // We can pass text to PasteTextFragment or directly to ResultFragment
-                }
-                // For simplicity, let's navigate to PasteTextFragment and pre-fill it or go directly to result
-                // But the user might want to see/edit extracted text. 
-                // Let's modify PasteTextFragment to accept an optional argument.
                 val bundle = Bundle().apply {
                     putString("extractedText", text)
                 }
