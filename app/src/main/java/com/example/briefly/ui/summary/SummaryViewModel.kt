@@ -41,7 +41,28 @@ class SummaryViewModel : ViewModel() {
 
     fun summarizeText(text: String) {
         _isLoading.value = true
-        val prompt = "Summarize the following text in clear bullet points with key insights:\n\n$text"
+        // Enhanced prompt for better formatting
+        val prompt = """
+            Summarize the following text with a professional and elegant structure. 
+            Use the following format:
+            
+            📌 OVERVIEW
+            [A concise 2-3 sentence paragraph summarizing the core message]
+            
+            🚀 KEY INSIGHTS
+            • [Insight 1]
+            • [Insight 2]
+            • [Insight 3]
+            • [Insight 4]
+            • [Insight 5]
+            
+            💡 TAKEAWAY
+            [A final concluding thought or action item]
+            
+            Text to summarize:
+            $text
+        """.trimIndent()
+        
         val request = GeminiRequest(listOf(Content(listOf(Part(prompt)))))
 
         viewModelScope.launch {
