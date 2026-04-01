@@ -82,6 +82,9 @@ dependencies {
     // PDFBox
     implementation(libs.pdfbox)
 
+    // ML Kit OCR
+    implementation(libs.mlkit.text.recognition)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

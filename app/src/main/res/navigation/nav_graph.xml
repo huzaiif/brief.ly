@@ -47,10 +47,23 @@
             android:id="@+id/action_homeFragment_to_webViewFragment"
             app:destination="@id/webViewFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_scanSummarizeFragment"
+            app:destination="@id/scanSummarizeFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanSummarizeFragment"
+        android:name="com.example.briefly.ui.scan.ScanSummarizeFragment"
+        android:label="Scan &amp; Summarize"
+        tools:layout="@layout/fragment_scan_summarize">
+        <action
+            android:id="@+id/action_scanSummarizeFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
 
     <fragment

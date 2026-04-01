@@ -62,9 +62,9 @@
             android:orientation="vertical"
             android:paddingBottom="24dp">
 
-            <!-- Paste Text Card -->
+            <!-- Scan & Summarize Card (NEW) -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardPasteText"
+                android:id="@+id/cardScanSummarize"
                 style="@style/PremiumCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,8 +90,62 @@
                         android:layout_height="28dp"
                         android:layout_marginStart="-64dp"
                         android:layout_marginEnd="36dp"
-                        android:src="@drawable/ic_paste"
+                        android:src="@drawable/ic_search"
                         app:tint="@color/grad_secondary_start" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scan &amp; Summarize"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Extract text from images"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Paste Text Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPasteText"
+                style="@style/PremiumCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/grad_primary"
+                        android:alpha="0.1"
+                        android:layout_marginEnd="20dp"/>
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="-64dp"
+                        android:layout_marginEnd="36dp"
+                        android:src="@drawable/ic_paste"
+                        app:tint="@color/grad_primary_start" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -135,7 +189,7 @@
                     <View
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="@drawable/grad_primary"
+                        android:background="@drawable/grad_secondary"
                         android:alpha="0.1"
                         android:layout_marginEnd="20dp"/>
 
@@ -145,7 +199,7 @@
                         android:layout_marginStart="-64dp"
                         android:layout_marginEnd="36dp"
                         android:src="@drawable/ic_upload"
-                        app:tint="@color/grad_primary_start" />
+                        app:tint="@color/grad_secondary_start" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
