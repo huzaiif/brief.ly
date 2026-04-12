@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.huzaif.briefly.R
@@ -49,6 +51,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val displayName = currentUser?.displayName ?: "User"
+        binding.tvGreeting.text = "Hey $displayName 👋"
+
+        binding.btnMenu.setOnClickListener {
+            val drawer = requireActivity().findViewById<DrawerLayout>(R.id.drawer_layout)
+            drawer.openDrawer(GravityCompat.START)
+        }
+
         binding.cardScanSummarize.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_scanSummarizeFragment)
         }
@@ -67,11 +78,6 @@ class HomeFragment : Fragment() {
 
         binding.cardResearch.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_webViewFragment)
-        }
-
-        binding.btnLogout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
         }
     }
 

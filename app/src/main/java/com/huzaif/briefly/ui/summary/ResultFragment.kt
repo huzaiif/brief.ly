@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.huzaif.briefly.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
@@ -19,6 +20,7 @@ class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding? = null
     private val binding get() = _binding!!
     private val viewModel: SummaryViewModel by viewModels()
+    private lateinit var chatAdapter: ChatAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +42,9 @@ class ResultFragment : Fragment() {
 
         // Visualization
         binding.wordCloudCanvas.setWords(originalText)
+
+        setupChat(originalText, summary)
+        observeViewModel()
 
         binding.btnCopy.setOnClickListener {
             val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -64,6 +69,47 @@ class ResultFragment : Fragment() {
         viewModel.saveSuccess.observe(viewLifecycleOwner) { success ->
             if (success) {
                 Toast.makeText(requireContext(), "Summary saved!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setupChat(originalText: String, summary: String) {
+        chatAdapter = ChatAdapter()
+        binding.rvChat.apply {
+            adapter = chatAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+            // Ensure the RecyclerView can be scrolled inside NestedScrollView
+            isNestedScrollingEnabled = true
+        }
+
+        binding.btnSend.setOnClickListener {
+            val question = binding.etQuestion.text.toString().trim()
+            if (question.isNotEmpty()) {
+                viewModel.askQuestion(question, originalText, summary)
+                binding.etQuestion.text?.clear()
+            }
+        }
+
+        viewModel.chatMessages.observe(viewLifecycleOwner) { messages ->
+            chatAdapter.setMessages(messages)
+            if (messages.isNotEmpty()) {
+                binding.rvChat.post {
+                    binding.rvChat.smoothScrollToPosition(messages.size - 1)
+                }
+            }
+        }
+    }
+
+    private fun observeViewModel() {
+        viewModel.isChatLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.chatProgressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+            binding.btnSend.isEnabled = !isLoading
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) { errorMessage ->
+            errorMessage?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+                viewModel.clearError()
             }
         }
     }

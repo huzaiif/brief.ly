@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="logo_app" type="drawable">@drawable/logo_dark_mode</item>
+</resources>

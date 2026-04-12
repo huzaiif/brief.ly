@@ -42,10 +42,11 @@ class SignupFragment : Fragment() {
         }
 
         binding.btnSignup.setOnClickListener {
+            val name = binding.etName.text.toString()
             val email = binding.etEmail.text.toString()
             val pass = binding.etPassword.text.toString()
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
-                viewModel.signup(email, pass)
+            if (name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty()) {
+                viewModel.signup(email, pass, name)
             } else {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
             }

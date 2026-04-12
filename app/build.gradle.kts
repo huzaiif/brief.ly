@@ -64,6 +64,9 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     
+    // Splash Screen
+    implementation(libs.androidx.core.splashscreen)
+
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
