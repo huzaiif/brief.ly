@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:lineSpacingMultiplier="1.4"
                         android:text="Distilling content..."
-                        android:textColor="#2D3436"
+                        android:textColor="@color/text_primary"
                         android:textSize="17sp"
                         android:fontFamily="sans-serif" />
                 </LinearLayout>
@@ -144,11 +144,11 @@
                         android:letterSpacing="0.2"
                         android:fontFamily="sans-serif-black" />
 
-                    <com.example.briefly.utils.WordCloudCanvas
+                    <com.huzaif.briefly.utils.WordCloudCanvas
                         android:id="@+id/wordCloudCanvas"
                         android:layout_width="match_parent"
                         android:layout_height="220dp"
-                        android:background="#FDFDFF" />
+                        android:background="@color/bg_light" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -197,7 +197,8 @@
         android:layout_gravity="bottom"
         android:layout_margin="20dp"
         app:cardCornerRadius="40dp"
-        app:cardElevation="16dp">
+        app:cardElevation="16dp"
+        app:cardBackgroundColor="@color/bg_surface">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.briefly.ui.auth.LoginFragment"
+        android:name="com.huzaif.briefly.ui.auth.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.briefly.ui.auth.SignupFragment"
+        android:name="com.huzaif.briefly.ui.auth.SignupFragment"
         android:label="Signup"
         tools:layout="@layout/fragment_signup">
         <action
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.briefly.ui.home.HomeFragment"
+        android:name="com.huzaif.briefly.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
@@ -58,7 +58,7 @@
 
     <fragment
         android:id="@+id/scanSummarizeFragment"
-        android:name="com.example.briefly.ui.scan.ScanSummarizeFragment"
+        android:name="com.huzaif.briefly.ui.scan.ScanSummarizeFragment"
         android:label="Scan &amp; Summarize"
         tools:layout="@layout/fragment_scan_summarize">
         <action
@@ -68,7 +68,7 @@
 
     <fragment
         android:id="@+id/pasteTextFragment"
-        android:name="com.example.briefly.ui.summary.PasteTextFragment"
+        android:name="com.huzaif.briefly.ui.summary.PasteTextFragment"
         android:label="Paste Text"
         tools:layout="@layout/fragment_paste_text">
         <argument
@@ -83,7 +83,7 @@
 
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.briefly.ui.summary.ResultFragment"
+        android:name="com.huzaif.briefly.ui.summary.ResultFragment"
         android:label="Summary Result"
         tools:layout="@layout/fragment_result">
         <argument
@@ -96,7 +96,7 @@
 
     <fragment
         android:id="@+id/savedSummariesFragment"
-        android:name="com.example.briefly.ui.saved.SavedSummariesFragment"
+        android:name="com.huzaif.briefly.ui.saved.SavedSummariesFragment"
         android:label="Saved Summaries"
         tools:layout="@layout/fragment_saved_summaries">
         <action
@@ -106,7 +106,7 @@
 
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="com.example.briefly.ui.research.WebViewFragment"
+        android:name="com.huzaif.briefly.ui.research.WebViewFragment"
         android:label="Research"
         tools:layout="@layout/fragment_web_view" />
 

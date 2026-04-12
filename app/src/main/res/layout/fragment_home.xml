@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/bg_light">
 
     <!-- Premium Dashboard Header -->
     <View
@@ -62,7 +62,7 @@
             android:orientation="vertical"
             android:paddingBottom="24dp">
 
-            <!-- Scan & Summarize Card (NEW) -->
+            <!-- Scan & Summarize Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardScanSummarize"
                 style="@style/PremiumCard"
@@ -82,7 +82,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/grad_secondary"
-                        android:alpha="0.1"
+                        android:alpha="0.2"
                         android:layout_marginEnd="20dp"/>
 
                     <ImageView
@@ -136,7 +136,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/grad_primary"
-                        android:alpha="0.1"
+                        android:alpha="0.2"
                         android:layout_marginEnd="20dp"/>
 
                     <ImageView
@@ -190,7 +190,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/grad_secondary"
-                        android:alpha="0.1"
+                        android:alpha="0.2"
                         android:layout_marginEnd="20dp"/>
 
                     <ImageView
@@ -244,7 +244,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/grad_primary"
-                        android:alpha="0.1"
+                        android:alpha="0.2"
                         android:layout_marginEnd="20dp"/>
 
                     <ImageView
@@ -297,7 +297,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/grad_secondary"
-                        android:alpha="0.1"
+                        android:alpha="0.2"
                         android:layout_marginEnd="20dp"/>
 
                     <ImageView

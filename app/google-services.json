@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "435292706671",
+    "firebase_url": "https://brief-ly-a0a4a-default-rtdb.firebaseio.com",
     "project_id": "brief-ly-a0a4a",
     "storage_bucket": "brief-ly-a0a4a.firebasestorage.app"
   },
@@ -10,6 +11,25 @@
         "mobilesdk_app_id": "1:435292706671:android:99a44576a1a5843dedba9a",
         "android_client_info": {
           "package_name": "com.example.briefly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlJ_7jatsdd64vJwRmo1RBtNqGbykU6cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435292706671:android:567fc1fc184e8446edba9a",
+        "android_client_info": {
+          "package_name": "com.huzaif.briefly"
         }
       },
       "oauth_client": [],

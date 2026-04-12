@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Backgrounds -->
+    <color name="bg_light">#0F1117</color> <!-- Deep background -->
+    <color name="bg_surface">#1A1C23</color> <!-- Card surface -->
+    
+    <!-- Adjusted Gradients for Dark Mode (Slightly deeper/less blinding) -->
+    <color name="grad_primary_start">#5849C2</color>
+    <color name="grad_primary_end">#857EF5</color>
+    <color name="grad_secondary_start">#0095BD</color>
+    <color name="grad_secondary_end">#5ECB66</color>
+    
+    <!-- Text -->
+    <color name="text_primary">#F8F9FF</color>
+    <color name="text_secondary">#94A3B8</color>
+    
+    <!-- Utility -->
+    <color name="glass_white">#1AFFFFFF</color>
+</resources>

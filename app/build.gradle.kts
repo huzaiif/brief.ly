@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.briefly"
+    namespace = "com.huzaif.briefly"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.briefly"
+        applicationId = "com.huzaif.briefly"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
