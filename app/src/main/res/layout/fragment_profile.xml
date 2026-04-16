@@ -14,7 +14,8 @@
         android:text="Edit Profile"
         android:textColor="@color/text_primary"
         android:textSize="28sp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:textColor="@color/text_primary" />
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/san_francisco" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -65,6 +67,8 @@
         android:text="Update Profile"
         app:backgroundTint="@null"
         android:background="@drawable/grad_primary"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/tilProfileName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

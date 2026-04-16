@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_light">
 
-    <!-- Header Section -->
+
     <View
         android:id="@+id/inputHeader"
         android:layout_width="match_parent"
@@ -22,7 +22,8 @@
         android:text="Paste Text"
         android:textColor="@color/white"
         android:textSize="28sp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +33,7 @@
         android:text="Ready to extract some insights?"
         android:textColor="@color/glass_white"
         android:textSize="16sp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/san_francisco"
         app:layout_constraintStart_toStartOf="@id/tvInputTitle"
         app:layout_constraintTop_toBottomOf="@id/tvInputTitle" />
 
@@ -68,7 +69,8 @@
                 android:padding="8dp"
                 android:textColor="@color/text_primary"
                 android:textColorHint="@color/text_secondary"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/san_francisco" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -81,6 +83,8 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="24dp"
         android:text="Summarize with AI"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <ProgressBar

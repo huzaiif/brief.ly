@@ -6,6 +6,9 @@
         <item name="colorSecondary">@color/grad_secondary_start</item>
         <item name="android:windowBackground">@color/bg_light</item>
         <item name="android:statusBarColor">@color/grad_primary_start</item>
+        
+        <!-- Main Text Font -->
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Theme.Briefly" parent="Base.Theme.Briefly">

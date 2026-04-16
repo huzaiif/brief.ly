@@ -18,13 +18,13 @@ class SavedSummariesViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val database = FirebaseDatabase.getInstance().getReference("summaries")
+    private val rootRef = FirebaseDatabase.getInstance().getReference("summaries")
 
     fun fetchSummaries() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         _isLoading.value = true
         
-        database.orderByChild("userId").equalTo(userId)
+        rootRef.child(userId)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val list = mutableListOf<SummaryRecord>()
@@ -42,6 +42,7 @@ class SavedSummariesViewModel : ViewModel() {
     }
 
     fun deleteSummary(id: String) {
-        database.child(id).removeValue()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        rootRef.child(userId).child(id).removeValue()
     }
 }

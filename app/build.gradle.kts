@@ -15,12 +15,11 @@ android {
         applicationId = "com.huzaif.briefly"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Load API Key from local.properties
         val properties = Properties()
         val localPropertiesFile = project.rootProject.file("local.properties")
         if (localPropertiesFile.exists()) {
@@ -64,28 +63,21 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     
-    // Splash Screen
     implementation(libs.androidx.core.splashscreen)
 
-    // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     
-    // Navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     
-    // Lifecycle
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
     
-    // Glide
     implementation(libs.glide)
     
-    // PDFBox
     implementation(libs.pdfbox)
 
-    // ML Kit OCR
     implementation(libs.mlkit.text.recognition)
 
     testImplementation(libs.junit)

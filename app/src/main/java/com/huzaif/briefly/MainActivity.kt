@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Lock drawer on login/signup screens
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.loginFragment || destination.id == R.id.signupFragment) {
                 binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
@@ -74,7 +73,6 @@ class MainActivity : AppCompatActivity() {
         val darkModeItem = menu.findItem(R.id.nav_dark_mode)
         val switch = darkModeItem.actionView?.findViewById<SwitchCompat>(R.id.switch_dark_mode)
 
-        // Check current state
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         switch?.isChecked = currentNightMode == Configuration.UI_MODE_NIGHT_YES
 
@@ -86,7 +84,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         
-        // Allow clicking the menu item itself to toggle
         darkModeItem.setOnMenuItemClickListener {
             switch?.isChecked = !(switch?.isChecked ?: false)
             true

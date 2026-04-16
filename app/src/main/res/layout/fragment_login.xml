@@ -30,7 +30,8 @@
         android:text="Brief.ly"
         android:textColor="@color/white"
         android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         android:letterSpacing="0.05"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +44,7 @@
         android:text="Summarize smarter, faster"
         android:textColor="@color/glass_white"
         android:textSize="16sp"
+        android:fontFamily="@font/san_francisco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
@@ -67,14 +69,16 @@
                 android:text="Welcome Back"
                 android:textColor="@color/text_primary"
                 android:textSize="24sp"
-                android:fontFamily="sans-serif-black" />
+                android:fontFamily="@font/san_francisco"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:text="Sign in to continue"
-                android:textColor="@color/text_secondary" />
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/san_francisco" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmail"
@@ -91,7 +95,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/text_primary" />
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="@font/san_francisco" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -110,7 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textColor="@color/text_primary" />
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="@font/san_francisco" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -118,7 +124,9 @@
                 style="@style/PremiumButton"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="Login" />
+                android:text="Login"
+                android:fontFamily="@font/san_francisco"
+                android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoToSignup"
@@ -128,7 +136,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:text="New user? Create account"
-                android:textColor="@color/grad_primary_start" />
+                android:textColor="@color/grad_primary_start"
+                android:fontFamily="@font/san_francisco" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

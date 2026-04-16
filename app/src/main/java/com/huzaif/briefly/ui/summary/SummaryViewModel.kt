@@ -137,7 +137,6 @@ class SummaryViewModel : ViewModel() {
                 val response = apiService.generateContent(API_KEY, request)
                 val updatedMessages = _chatMessages.value.orEmpty().toMutableList()
                 
-                // Remove the "Thinking..." message
                 if (updatedMessages.isNotEmpty() && updatedMessages.last().text == "Thinking...") {
                     updatedMessages.removeAt(updatedMessages.size - 1)
                 }
@@ -166,7 +165,7 @@ class SummaryViewModel : ViewModel() {
 
     fun saveSummary(originalText: String, summary: String) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-        val database = FirebaseDatabase.getInstance().getReference("summaries")
+        val database = FirebaseDatabase.getInstance().getReference("summaries").child(userId)
         val id = database.push().key ?: return
         val record = SummaryRecord(id, userId, originalText, summary)
 

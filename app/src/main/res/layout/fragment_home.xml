@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     android:background="@color/bg_light">
 
-    <!-- Premium Dashboard Header -->
-    <View
+    <com.huzaif.briefly.ui.custom.WaveHeaderView
         android:id="@+id/dashboardHeader"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@drawable/grad_primary"
+        android:layout_height="280dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -34,6 +32,7 @@
         android:text="Hey Huzaif 👋"
         android:textColor="@color/white"
         android:textSize="28sp"
+        android:fontFamily="@font/san_francisco"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnMenu" />
@@ -45,13 +44,15 @@
         android:text="What do you want to summarize today?"
         android:textColor="@color/glass_white"
         android:textSize="16sp"
+        android:fontFamily="@font/san_francisco"
         app:layout_constraintStart_toStartOf="@id/tvGreeting"
         app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-60dp"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashboardHeader">
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="24dp">
+            android:paddingBottom="120dp">
 
             <!-- Scan & Summarize Card -->
             <com.google.android.material.card.MaterialCardView
@@ -104,6 +105,7 @@
                             android:text="Scan &amp; Summarize"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
+                            android:fontFamily="@font/san_francisco"
                             android:textStyle="bold" />
 
                         <TextView
@@ -111,7 +113,8 @@
                             android:layout_height="wrap_content"
                             android:text="Extract text from images"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/san_francisco" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -158,6 +161,7 @@
                             android:text="Paste Text"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
+                            android:fontFamily="@font/san_francisco"
                             android:textStyle="bold" />
 
                         <TextView
@@ -165,7 +169,8 @@
                             android:layout_height="wrap_content"
                             android:text="Summarize manual input"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/san_francisco" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -212,6 +217,7 @@
                             android:text="Upload File"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
+                            android:fontFamily="@font/san_francisco"
                             android:textStyle="bold" />
 
                         <TextView
@@ -219,7 +225,8 @@
                             android:layout_height="wrap_content"
                             android:text="PDF or TXT documents"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/san_francisco" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -266,6 +273,7 @@
                             android:text="Saved Summaries"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
+                            android:fontFamily="@font/san_francisco"
                             android:textStyle="bold" />
 
                         <TextView
@@ -273,7 +281,8 @@
                             android:layout_height="wrap_content"
                             android:text="Review your history"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/san_francisco" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -319,6 +328,7 @@
                             android:text="Research Mode"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
+                            android:fontFamily="@font/san_francisco"
                             android:textStyle="bold" />
 
                         <TextView
@@ -326,12 +336,19 @@
                             android:layout_height="wrap_content"
                             android:text="Search web articles"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/san_francisco" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.huzaif.briefly.ui.custom.WaveFooterView
+        android:id="@+id/dashboardFooter"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

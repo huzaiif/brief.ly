@@ -40,9 +40,6 @@ class ResultFragment : Fragment() {
         binding.tvSummary.text = summary
         binding.tvOriginalText.text = originalText
 
-        // Visualization
-        binding.wordCloudCanvas.setWords(originalText)
-
         setupChat(originalText, summary)
         observeViewModel()
 
@@ -78,7 +75,6 @@ class ResultFragment : Fragment() {
         binding.rvChat.apply {
             adapter = chatAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            // Ensure the RecyclerView can be scrolled inside NestedScrollView
             isNestedScrollingEnabled = true
         }
 
